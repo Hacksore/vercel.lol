@@ -14,12 +14,12 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "vercel.lol",
     description,
     openGraph: {
-      images: ["/og.png"],
+      images: ["https://vercel.lol/og.png"],
       description,
       type: "website",
     },
     twitter: {
-      images: ["/og.png"],
+      images: ["https://vercel.lol/og.png"],
       description,
       card: "summary_large_image",
     },
