@@ -23,7 +23,7 @@ export default function Home() {
         <div id="t3wrap" className="relative tracking-tighter">
           <span
             id="t3"
-            className="duration-300 opacity-0 bg-clip-text text-transparent bg-gradient-to-r from-[#4444FF] to-[#ff0088]"
+            className="duration-300 opacity-0 bg-clip-text text-transparent bg-gradient-to-r from-[#4444FF] to-[#FF00FF]"
           >
             Triangle
           </span>
