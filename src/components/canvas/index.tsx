@@ -10,8 +10,8 @@ let dx = 1;
 let dy = 1;
 
 // I am sorry for this
-let viewportHeight = window.innerHeight;
-let viewportWidth = window.innerWidth;
+let viewportHeight = 0;
+let viewportWidth = 0;
 
 let currentColorId = 0;
 
@@ -28,6 +28,10 @@ export function Canvas() {
   const TRIANGLE_WIDTH = 64;
 
   useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
     const canvas = document.getElementById("canvas") as HTMLCanvasElement;
     canvasRef.current = canvas;
 
@@ -41,11 +45,16 @@ export function Canvas() {
       // set canvas size to match
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+
+      viewportHeight = window.innerHeight;
+      viewportWidth = window.innerWidth;
     });
 
+    viewportHeight = window.innerHeight;
+    viewportWidth = window.innerWidth;
     // set canvas size to match
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
   }, []);
 
   const render = () => {
