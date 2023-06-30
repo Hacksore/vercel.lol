@@ -21,6 +21,7 @@ const COLORS = ["#00FFFF", "#FF00FF", "#00FF00", "#FFFF00", "#0000FF"];
 
 export function Canvas() {
   const blobRef = React.useRef<HTMLDivElement | null>(null);
+  const h3Ref = React.useRef<HTMLDivElement | null>(null);
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const ctxRef = React.useRef<CanvasRenderingContext2D | null>(null);
 
@@ -33,6 +34,9 @@ export function Canvas() {
     }
     const blob = document.getElementById("cursorthing") as HTMLDivElement;
     blobRef.current = blob;
+
+    const h3 = document.getElementById("subtitle") as HTMLDivElement;
+    h3Ref.current = h3;
 
     const canvas = document.getElementById("canvas") as HTMLCanvasElement;
     canvasRef.current = canvas;
@@ -100,6 +104,10 @@ export function Canvas() {
     const blob = blobRef.current;
     if (blob) {
       blob.style.background = COLORS[currentColorId];
+    }
+    const h3 = h3Ref.current;
+    if (h3) {
+      h3.style.background = COLORS[currentColorId];
     }
 
     // draw a triangle with the tip pointing up
