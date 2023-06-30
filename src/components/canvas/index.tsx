@@ -11,8 +11,8 @@ let dy = 1;
 
 const PUCK_SPEED = 0.8;
 export function Canvas() {
-  const canvasRef = React.useRef < HTMLCanvasElement | null > (null);
-  const ctxRef = React.useRef < CanvasRenderingContext2D | null > (null);
+  const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
+  const ctxRef = React.useRef<CanvasRenderingContext2D | null>(null);
 
   const CANVAS_WIDTH = 800;
   const CANVAS_HEIGHT = 600;
@@ -54,26 +54,27 @@ export function Canvas() {
     x += dx * PUCK_SPEED;
     y += dy * PUCK_SPEED;
 
-    // draw a solid triangle 
+    // draw a solid triangle
     ctx.fillStyle = "#fff";
 
+    // draw a triangle with the tip pointing up
     ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo(x + TRIANGLE_WIDTH, y);
-    ctx.lineTo(x + TRIANGLE_WIDTH / 2, y + TRIANGLE_HEIGHT);
+    ctx.moveTo(x + TRIANGLE_WIDTH / 2, y);
+    ctx.lineTo(x + TRIANGLE_WIDTH, y + TRIANGLE_HEIGHT);
+    ctx.lineTo(x, y + TRIANGLE_HEIGHT);
     ctx.fill();
 
     window.requestAnimationFrame(render);
   };
 
   return (
-  <>
-    <canvas
-      id="canvas"
-      style={{ background: "#000" }}
-      width="800"
-      height="600"
-    ></canvas>
+    <>
+      <canvas
+        id="canvas"
+        style={{ background: "#000" }}
+        width="800"
+        height="600"
+      />
     </>
   );
 }
