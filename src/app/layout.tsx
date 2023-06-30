@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-// add inter font from next
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -15,13 +14,13 @@ export async function generateMetadata(): Promise<Metadata> {
     title,
     description,
     openGraph: {
-      images: ["https://vercel.lol/og.png"],
+      images: ["https://vercel.lol/real-og.png"],
       description,
       title,
       type: "website",
     },
     twitter: {
-      images: ["https://vercel.lol/og.png"],
+      images: ["https://vercel.lol/real-og.png"],
       title,
       description,
       card: "summary_large_image",
