@@ -3,7 +3,7 @@ import { Canvas } from "../components/canvas";
 export default function Home() {
   return (
     <div>
-      <h1 className="fixed opacity-90 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-black text-6xl md:text-8xl text-center">
+      <h1 className="fixed opacity-90 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-6xl md:text-8xl text-center">
         <div id="t1wrap" className="relative pb-3">
           <span
             id="t1"
