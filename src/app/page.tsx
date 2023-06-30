@@ -3,7 +3,7 @@ import { Canvas } from "../components/canvas";
 export default function Home() {
   return (
     <div>
-      <h1 className="fixed bg-clip-text text-transparent bg-white bg-opacity-90 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-4xl md:text-8xl text-center">
+      <h1 className="fixed opacity-90 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-6xl md:text-8xl text-center">
         <div id="t1" className="duration-300 pb-3 ">
           ▲
         </div>
@@ -19,9 +19,9 @@ export default function Home() {
         </div>
         <div
           id="subtitle"
-          className="rounded-full font-normal max-w-max mx-auto mt-8 text-sm md:text-xl p-[1px] md:p-[1.5px]"
+          className="rounded-full bg-opacity-80 font-normal max-w-max mx-auto mt-8 text-sm md:text-xl p-[1px] md:p-[1.5px]"
         >
-          <div className="md:px-3 py-1 px-2 rounded-full bg-black bg-opacity-60 duration-300 text-white">
+          <div className="px-3 py-1 rounded-full bg-black bg-opacity-60 duration-300 text-white">
             We sell triangles.
           </div>
         </div>
@@ -33,7 +33,7 @@ export default function Home() {
         </a>
       </span>
       <span className="fixed bottom-8 left-1/2 -translate-x-1/2 text-neutral-600 text-sm">
-        © 2069 ▼ercel.lol
+        © 2069 <span className="-mr-[3px]">▼</span>ercel.lol
       </span>
     </div>
   );
