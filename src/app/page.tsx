@@ -3,8 +3,14 @@ import { Canvas } from "../components/canvas";
 export default function Home() {
   return (
     <div>
-      <h1 className="fixed bg-clip-text text-transparent bg-white bg-opacity-90 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-4xl md:text-7xl text-center">
-        The Triangle Company
+      <h1 className="fixed bg-clip-text text-transparent leading-5 bg-white bg-opacity-90 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-4xl md:text-8xl text-center">
+        <span>▲</span>
+        <br />
+        <span>The</span>
+        <br />
+        <span>Triangle</span>
+        <br />
+        <span className="tracking-widest">Company</span>
         <div
           id="subtitle"
           className="rounded-full font-normal max-w-max mx-auto mt-8 text-xl p-[1.5px]"
