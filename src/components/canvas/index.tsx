@@ -20,6 +20,7 @@ const PUCK_SPEED = 0.8;
 const COLORS = ["#00FFFF", "#FF00FF", "#00FF00", "#FFFF00", "#0000FF"];
 
 export function Canvas() {
+  const blobRef = React.useRef<HTMLDivElement | null>(null);
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const ctxRef = React.useRef<CanvasRenderingContext2D | null>(null);
 
@@ -30,6 +31,8 @@ export function Canvas() {
     if (typeof window === "undefined") {
       return;
     }
+    const blob = document.getElementById("cursorthing") as HTMLDivElement;
+    blobRef.current = blob;
 
     const canvas = document.getElementById("canvas") as HTMLCanvasElement;
     canvasRef.current = canvas;
@@ -47,6 +50,12 @@ export function Canvas() {
 
       viewportHeight = window.innerHeight;
       viewportWidth = window.innerWidth;
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      blob.style.translate = `${e.clientX - blob.clientWidth / 2}px ${
+        e.clientY - blob.clientHeight / 2
+      }px`;
     });
 
     viewportHeight = window.innerHeight;
@@ -87,6 +96,12 @@ export function Canvas() {
     // draw a solid triangle
     ctx.fillStyle = COLORS[currentColorId];
 
+    // change blob bg
+    const blob = blobRef.current;
+    if (blob) {
+      blob.style.background = COLORS[currentColorId];
+    }
+
     // draw a triangle with the tip pointing up
     ctx.beginPath();
     ctx.moveTo(x + TRIANGLE_WIDTH / 2, y);
@@ -99,12 +114,19 @@ export function Canvas() {
 
   return (
     <>
+      <div
+        id="cursorthing"
+        className="w-64 h-64 absolute opacity-50 blur-[10rem] z-10 rounded-full"
+      />
       <canvas
         id="canvas"
         style={{ background: "#000" }}
         width="100%"
         height="100%"
       />
+      <span className="fixed bottom-8 left-1/2 -translate-x-1/2 text-neutral-600 text-sm">
+        © 2077 Vercel.lol
+      </span>
     </>
   );
 }

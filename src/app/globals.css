@@ -25,3 +25,14 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@keyframes spin {
+  50% {
+    scale: 2;
+  }
+}
+
+#cursorthing {
+  transition: all 0.1s;
+  animation: spin 5s ease-in-out infinite;
+}
