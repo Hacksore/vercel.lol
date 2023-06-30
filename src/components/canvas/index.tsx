@@ -125,7 +125,7 @@ export function Canvas() {
         height="100%"
       />
       <span className="fixed bottom-8 left-1/2 -translate-x-1/2 text-neutral-600 text-sm">
-        © 2077 Vercel.lol
+        © 2077 ▼ercel.lol
       </span>
     </>
   );
