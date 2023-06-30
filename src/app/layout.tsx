@@ -1,9 +1,14 @@
+import { Metadata } from "next";
 import "./globals.css";
 
-export const metadata = {
-  title: "vercel.lol",
-  description: "Triangle DVD Screensaver",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "vercel.lol",
+    openGraph: {
+      images: ["/og.png"],
+    },
+  };
+}
 
 export default function RootLayout({
   children,
