@@ -116,7 +116,7 @@ export function Canvas() {
     <>
       <div
         id="cursorthing"
-        className="w-64 h-64 absolute opacity-50 blur-[10rem] z-10 rounded-full"
+        className="w-64 h-64 fixed opacity-50 blur-[10rem] z-10 rounded-full"
       />
       <canvas
         id="canvas"
