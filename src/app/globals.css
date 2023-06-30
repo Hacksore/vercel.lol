@@ -36,3 +36,14 @@ body {
   transition: all 0.1s;
   animation: spin 5s ease-in-out infinite;
 }
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: #f81ce5;
+}
+
+::selection {
+  color: white;
+  background: #f81ce5;
+}
