@@ -17,7 +17,8 @@ let currentColorId = 0;
 const PUCK_SPEED = 0.8;
 
 // https://github.com/vercel/turbo/blob/261d22177f6c7301f9c5e93518112b025b15d7aa/cli/internal/colorcache/colorcache.go#L14
-const COLORS = ["#00FFFF", "#FF00FF", "#00FF00", "#FF8800", "#4444FF"];
+// NOTE: these 4 colours match gradients in page.tsx
+const COLORS = ["#00FFFF", "#4444FF", "#FF00FF", "#FF8800"];
 let currentT = 1;
 
 export function Canvas() {
@@ -133,6 +134,7 @@ export function Canvas() {
     const h3 = h3Ref.current;
     if (h3) {
       h3.style.background = COLORS[currentColorId];
+      h3.style.boxShadow = `0 0 3rem -0.25rem ${COLORS[currentColorId]}`;
     }
 
     const t1 = t1Ref.current as HTMLElement;
@@ -141,28 +143,20 @@ export function Canvas() {
     const t4 = t4Ref.current as HTMLElement;
 
     if (currentT === 1) {
-      t1.style.color = COLORS[currentColorId];
-      t2.style.color = "white";
-      t3.style.color = "white";
-      t4.style.color = "white";
+      t1.style.opacity = "1";
+      t4.style.opacity = "0";
     }
     if (currentT === 2) {
-      t1.style.color = "white";
-      t2.style.color = COLORS[currentColorId];
-      t3.style.color = "white";
-      t4.style.color = "white";
+      t1.style.opacity = "0";
+      t2.style.opacity = "1";
     }
     if (currentT === 3) {
-      t1.style.color = "white";
-      t2.style.color = "white";
-      t3.style.color = COLORS[currentColorId];
-      t4.style.color = "white";
+      t2.style.opacity = "0";
+      t3.style.opacity = "1";
     }
     if (currentT === 4) {
-      t1.style.color = "white";
-      t2.style.color = "white";
-      t3.style.color = "white";
-      t4.style.color = COLORS[currentColorId];
+      t3.style.opacity = "0";
+      t4.style.opacity = "1";
     }
 
     // draw a triangle with the tip pointing up

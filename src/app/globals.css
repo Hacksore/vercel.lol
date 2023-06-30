@@ -47,3 +47,35 @@ body {
   color: white;
   background: #f81ce5;
 }
+
+#t1wrap::before {
+  content: "▲";
+  position: absolute;
+  opacity: 0.95;
+  z-index: -1;
+  inset: 0;
+}
+
+#t2wrap::before {
+  content: "The";
+  position: absolute;
+  opacity: 0.95;
+  z-index: -1;
+  inset: 0;
+}
+
+#t3wrap::before {
+  content: "Triangle";
+  position: absolute;
+  opacity: 0.95;
+  z-index: -1;
+  inset: 0;
+}
+
+#t4wrap::before {
+  content: "Company";
+  position: absolute;
+  opacity: 0.95;
+  z-index: -1;
+  inset: 0;
+}
