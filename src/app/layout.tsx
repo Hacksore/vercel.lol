@@ -4,8 +4,10 @@ import "./globals.css";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "vercel.lol",
+    description: "▲ ▲ ▲",
     openGraph: {
       images: ["/og.png"],
+      description: "▲ ▲ ▲",
     },
   };
 }
