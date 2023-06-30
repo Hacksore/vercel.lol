@@ -11,11 +11,12 @@ let dy = 1;
 
 const PUCK_SPEED = 0.8;
 export function Canvas() {
+  const [viewportWidth, setViewportWidth] = React.useState<number>(0);
+  const [viewportHeight, setViewportHeight] = React.useState<number>(0);
+
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const ctxRef = React.useRef<CanvasRenderingContext2D | null>(null);
 
-  const CANVAS_WIDTH = 800;
-  const CANVAS_HEIGHT = 600;
   const TRIANGLE_HEIGHT = 64;
   const TRIANGLE_WIDTH = 64;
 
@@ -27,6 +28,20 @@ export function Canvas() {
     ctxRef.current = ctx;
 
     window.requestAnimationFrame(render);
+
+    // get size of the viewport
+    window.addEventListener("resize", () => {
+      setViewportWidth(window.innerWidth);
+      setViewportHeight(window.innerHeight);
+
+      // set canvas size to match
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // set canvas size to match
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   }, []);
 
   const render = () => {
@@ -39,7 +54,7 @@ export function Canvas() {
       return;
     }
 
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    ctx.clearRect(0, 0, viewportWidth, viewportHeight);
 
     if (y + TRIANGLE_HEIGHT >= canvasRef.current.height || y < 0) {
       dy *= -1;
@@ -72,8 +87,8 @@ export function Canvas() {
       <canvas
         id="canvas"
         style={{ background: "#000" }}
-        width="800"
-        height="600"
+        width="100%"
+        height="100%"
       />
     </>
   );
