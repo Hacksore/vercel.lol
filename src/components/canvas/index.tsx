@@ -116,7 +116,7 @@ export function Canvas() {
     <>
       <div
         id="cursorthing"
-        className="w-64 h-64 fixed opacity-50 blur-[10rem] z-10 rounded-full"
+        className="pointer-events-none w-64 h-64 fixed opacity-50 blur-[10rem] z-10 rounded-full"
       />
       <canvas
         id="canvas"
@@ -124,9 +124,6 @@ export function Canvas() {
         width="100%"
         height="100%"
       />
-      <span className="fixed bottom-8 left-1/2 -translate-x-1/2 text-neutral-600 text-sm">
-        © 2077 ▼ercel.lol
-      </span>
     </>
   );
 }
