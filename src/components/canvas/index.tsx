@@ -13,9 +13,14 @@ let dy = 1;
 let viewportHeight = window.innerHeight;
 let viewportWidth = window.innerWidth;
 
-const PUCK_SPEED = 0.8;
-export function Canvas() {
+let currentColorId = 0;
 
+const PUCK_SPEED = 0.8;
+
+// https://github.com/vercel/turbo/blob/261d22177f6c7301f9c5e93518112b025b15d7aa/cli/internal/colorcache/colorcache.go#L14
+const COLORS = ["#00FFFF", "#FF00FF", "#00FF00", "#FFFF00", "#0000FF"];
+
+export function Canvas() {
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const ctxRef = React.useRef<CanvasRenderingContext2D | null>(null);
 
@@ -56,11 +61,13 @@ export function Canvas() {
     ctx.clearRect(0, 0, viewportWidth, viewportHeight);
 
     if (y + TRIANGLE_HEIGHT >= canvasRef.current.height || y < 0) {
+      currentColorId = Math.floor(Math.random() * COLORS.length);
       dy *= -1;
     }
 
     // Reverse direction if hitting the canvas boundaries
     if (x + TRIANGLE_WIDTH >= canvasRef.current.width || x < 0) {
+      currentColorId = Math.floor(Math.random() * COLORS.length);
       dx *= -1;
     }
 
@@ -69,7 +76,7 @@ export function Canvas() {
     y += dy * PUCK_SPEED;
 
     // draw a solid triangle
-    ctx.fillStyle = "#fff";
+    ctx.fillStyle = COLORS[currentColorId];
 
     // draw a triangle with the tip pointing up
     ctx.beginPath();
