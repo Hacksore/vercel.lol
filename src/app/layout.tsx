@@ -1,4 +1,5 @@
 import "./globals.css";
+
 export const metadata = {
   title: "vercel.lol",
   description: "Triangle DVD Screensaver",

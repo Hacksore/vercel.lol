@@ -12,7 +12,6 @@ let dy = 1;
 // I am sorry for this
 let viewportHeight = 0;
 let viewportWidth = 0;
-
 let currentColorId = 0;
 
 const PUCK_SPEED = 0.8;
@@ -52,6 +51,7 @@ export function Canvas() {
 
     viewportHeight = window.innerHeight;
     viewportWidth = window.innerWidth;
+
     // set canvas size to match
     canvas.width = innerWidth;
     canvas.height = innerHeight;
