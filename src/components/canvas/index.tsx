@@ -9,10 +9,12 @@ let y = 0;
 let dx = 1;
 let dy = 1;
 
+// I am sorry for this
+let viewportHeight = window.innerHeight;
+let viewportWidth = window.innerWidth;
+
 const PUCK_SPEED = 0.8;
 export function Canvas() {
-  const [viewportWidth, setViewportWidth] = React.useState<number>(0);
-  const [viewportHeight, setViewportHeight] = React.useState<number>(0);
 
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const ctxRef = React.useRef<CanvasRenderingContext2D | null>(null);
@@ -31,9 +33,6 @@ export function Canvas() {
 
     // get size of the viewport
     window.addEventListener("resize", () => {
-      setViewportWidth(window.innerWidth);
-      setViewportHeight(window.innerHeight);
-
       // set canvas size to match
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
