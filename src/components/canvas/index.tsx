@@ -16,7 +16,6 @@ let currentColorId = 0;
 
 const PUCK_SPEED = 0.8;
 
-// https://github.com/vercel/turbo/blob/261d22177f6c7301f9c5e93518112b025b15d7aa/cli/internal/colorcache/colorcache.go#L14
 // NOTE: these 4 colours match gradients in page.tsx
 const COLORS = ["#00FFFF", "#4444FF", "#FF00FF", "#FF8800"];
 let currentT = 1;
@@ -77,9 +76,8 @@ export function Canvas() {
     });
 
     window.addEventListener("mousemove", (e) => {
-      blob.style.translate = `${e.clientX - blob.clientWidth / 2}px ${
-        e.clientY - blob.clientHeight / 2
-      }px`;
+      blob.style.translate = `${e.clientX - blob.clientWidth / 2}px ${e.clientY - blob.clientHeight / 2
+        }px`;
     });
 
     viewportHeight = window.innerHeight;
