@@ -9,7 +9,7 @@ export default function Home() {
             id="t1"
             className="duration-300 opacity-0 bg-clip-text text-transparent bg-gradient-to-r from-[#00FFFF] to-[#0088FF]"
           >
-            ▲
+            <a href="https://vercel.com">▲</a>
           </span>
         </div>
         <div id="t2wrap" className="relative">
