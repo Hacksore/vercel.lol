@@ -1,4 +1,6 @@
 import { Canvas } from "../components/canvas";
+import { VercelToolbar } from "@vercel/toolbar/next";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -55,6 +57,10 @@ export default function Home() {
       <span className="fixed bottom-8 left-1/2 -translate-x-1/2 text-neutral-600 text-sm">
         © 2069 <span className="-mr-[3px]">▼</span>ercel.lol
       </span>
+
+      <Suspense>
+        <VercelToolbar />
+      </Suspense>
     </div>
   );
 }
