@@ -37,6 +37,7 @@ export function Canvas() {
 
   const TRIANGLE_HEIGHT = 64;
   const TRIANGLE_WIDTH = 64;
+  const SQUARE_SIZE = 64;
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -100,7 +101,11 @@ export function Canvas() {
 
     ctx.clearRect(0, 0, viewportWidth, viewportHeight);
 
-    if (y + TRIANGLE_HEIGHT >= canvasRef.current.height || y < 0) {
+    // Check if today is April 1st
+    const today = new Date();
+    const isAprilFools = today.getMonth() === 3 && today.getDate() === 1;
+
+    if (y + (isAprilFools ? SQUARE_SIZE : TRIANGLE_HEIGHT) >= canvasRef.current.height || y < 0) {
       currentColorId === COLORS.length - 1
         ? (currentColorId = 0)
         : currentColorId++;
@@ -109,7 +114,7 @@ export function Canvas() {
     }
 
     // Reverse direction if hitting the canvas boundaries
-    if (x + TRIANGLE_WIDTH >= canvasRef.current.width || x < 0) {
+    if (x + (isAprilFools ? SQUARE_SIZE : TRIANGLE_WIDTH) >= canvasRef.current.width || x < 0) {
       currentColorId === COLORS.length - 1
         ? (currentColorId = 0)
         : currentColorId++;
@@ -121,7 +126,7 @@ export function Canvas() {
     x += dx * PUCK_SPEED;
     y += dy * PUCK_SPEED;
 
-    // draw a solid triangle
+    // draw a solid shape
     ctx.fillStyle = COLORS[currentColorId];
 
     // change blob bg
@@ -157,12 +162,17 @@ export function Canvas() {
       t4.style.opacity = "1";
     }
 
-    // draw a triangle with the tip pointing up
-    ctx.beginPath();
-    ctx.moveTo(x + TRIANGLE_WIDTH / 2, y);
-    ctx.lineTo(x + TRIANGLE_WIDTH, y + TRIANGLE_HEIGHT);
-    ctx.lineTo(x, y + TRIANGLE_HEIGHT);
-    ctx.fill();
+    if (isAprilFools) {
+      // draw a square
+      ctx.fillRect(x, y, SQUARE_SIZE, SQUARE_SIZE);
+    } else {
+      // draw a triangle with the tip pointing up
+      ctx.beginPath();
+      ctx.moveTo(x + TRIANGLE_WIDTH / 2, y);
+      ctx.lineTo(x + TRIANGLE_WIDTH, y + TRIANGLE_HEIGHT);
+      ctx.lineTo(x, y + TRIANGLE_HEIGHT);
+      ctx.fill();
+    }
 
     window.requestAnimationFrame(render);
   };
