@@ -11,7 +11,7 @@ export default function Home() {
             id="t1"
             className="duration-300 opacity-0 bg-clip-text text-transparent bg-gradient-to-r from-[#00FFFF] to-[#0088FF]"
           >
-            <a href="https://vercel.com">▲</a>
+            <a href="https://vercel.com">■</a>
           </span>
         </div>
         <div id="t2wrap" className="relative">
@@ -44,7 +44,7 @@ export default function Home() {
           className="rounded-full bg-white bg-opacity-80 font-normal max-w-max mx-auto mt-8 text-sm md:text-xl p-[1px] md:p-[1.5px]"
         >
           <div className="px-3 py-1 rounded-full bg-black bg-opacity-60 duration-300 text-white">
-            We sell triangles.
+            We sell squares.
           </div>
         </div>
       </h1>
@@ -55,7 +55,7 @@ export default function Home() {
         </a>
       </span>
       <span className="fixed bottom-8 left-1/2 -translate-x-1/2 text-neutral-600 text-sm">
-        © 2069 <span className="-mr-[3px]">▼</span>ercel.lol
+        © 2069 <span className="-mr-[3px]">■</span>ercel.lol
       </span>
 
       <Suspense>
