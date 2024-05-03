@@ -37,6 +37,7 @@ export function Canvas() {
 
   const TRIANGLE_HEIGHT = 64;
   const TRIANGLE_WIDTH = 64;
+  const SQUARE_SIZE = 64;
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -100,6 +101,10 @@ export function Canvas() {
 
     ctx.clearRect(0, 0, viewportWidth, viewportHeight);
 
+    // Check if it's April 1st
+    const today = new Date();
+    const isAprilFools = today.getMonth() === 3 && today.getDate() === 1;
+
     if (y + TRIANGLE_HEIGHT >= canvasRef.current.height || y < 0) {
       currentColorId === COLORS.length - 1
         ? (currentColorId = 0)
@@ -121,7 +126,7 @@ export function Canvas() {
     x += dx * PUCK_SPEED;
     y += dy * PUCK_SPEED;
 
-    // draw a solid triangle
+    // draw a solid shape based on the date
     ctx.fillStyle = COLORS[currentColorId];
 
     // change blob bg
@@ -143,6 +148,7 @@ export function Canvas() {
     if (currentT === 1) {
       t1.style.opacity = "1";
       t4.style.opacity = "0";
+      if (isAprilFools) t1.textContent = "■"; // Change triangle to square UTF8 char
     }
     if (currentT === 2) {
       t1.style.opacity = "0";
@@ -155,14 +161,20 @@ export function Canvas() {
     if (currentT === 4) {
       t3.style.opacity = "0";
       t4.style.opacity = "1";
+      if (isAprilFools) t4.textContent = "■"; // Ensure all triangle UTF8 characters are changed to square
     }
 
-    // draw a triangle with the tip pointing up
-    ctx.beginPath();
-    ctx.moveTo(x + TRIANGLE_WIDTH / 2, y);
-    ctx.lineTo(x + TRIANGLE_WIDTH, y + TRIANGLE_HEIGHT);
-    ctx.lineTo(x, y + TRIANGLE_HEIGHT);
-    ctx.fill();
+    if (isAprilFools) {
+      // draw a square
+      ctx.fillRect(x, y, SQUARE_SIZE, SQUARE_SIZE);
+    } else {
+      // draw a triangle with the tip pointing up
+      ctx.beginPath();
+      ctx.moveTo(x + TRIANGLE_WIDTH / 2, y);
+      ctx.lineTo(x + TRIANGLE_WIDTH, y + TRIANGLE_HEIGHT);
+      ctx.lineTo(x, y + TRIANGLE_HEIGHT);
+      ctx.fill();
+    }
 
     window.requestAnimationFrame(render);
   };
