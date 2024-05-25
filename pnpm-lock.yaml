@@ -11,6 +11,9 @@ importers:
       '@vercel/analytics':
         specifier: ^1.3.1
         version: 1.3.1(next@14.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
+      '@vercel/flags':
+        specifier: ^2.5.0
+        version: 2.5.0(next@14.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@vercel/toolbar':
         specifier: ^0.1.15
         version: 0.1.15(next@14.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
@@ -321,6 +324,13 @@ packages:
         optional: true
       react:
         optional: true
+
+  '@vercel/flags@2.5.0':
+    resolution: {integrity: sha512-dGaPYLEfo45zlj67IC+qnzWhpNj4mgTxK3jbbGL3hNN3NH7sJ714ATMnA6FZdv57NCJnd5tJEK5CbaxzqH8avQ==}
+    peerDependencies:
+      next: '*'
+      react: '*'
+      react-dom: '*'
 
   '@vercel/toolbar@0.1.15':
     resolution: {integrity: sha512-YDwRdYM6ij5CbkZm9NgoO1H7uXPuoM5nnzoHYMAZtF0sJylhQ7JIgwLniW71V6RNCKCrJGS1B23BvrQQl8WyrQ==}
@@ -1047,6 +1057,9 @@ packages:
   jiti@1.21.0:
     resolution: {integrity: sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==}
     hasBin: true
+
+  jose@5.2.1:
+    resolution: {integrity: sha512-qiaQhtQRw6YrOaOj0v59h3R6hUY9NvxBmmnMfKemkqYmBB0tEc97NbLP7ix44VP5p9/0YHG8Vyhzuo5YBNwviA==}
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -1940,6 +1953,13 @@ snapshots:
       next: 14.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react: 18.2.0
 
+  '@vercel/flags@2.5.0(next@14.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      jose: 5.2.1
+      next: 14.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+
   '@vercel/toolbar@0.1.15(next@14.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@tinyhttp/app': 1.3.0
@@ -2832,6 +2852,8 @@ snapshots:
       '@pkgjs/parseargs': 0.11.0
 
   jiti@1.21.0: {}
+
+  jose@5.2.1: {}
 
   js-tokens@4.0.0: {}
 
