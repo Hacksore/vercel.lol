@@ -8,8 +8,7 @@ export async function GET(request: NextRequest) {
   return NextResponse.json<ApiData>({
     definitions: {
       exampleFlag: {
-        description: "Controls whether the new feature is visible",
-        origin: "https://example.com/#new-feature",
+        description: "test flag",
         options: [
           { value: false, label: "Off" },
           { value: true, label: "On" },
