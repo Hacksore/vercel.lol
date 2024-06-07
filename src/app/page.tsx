@@ -68,7 +68,7 @@ export default function Home() {
             Buy a Triangle
           </a>
         </span>
-        <span className="fixed bottom-24 left-1/2 -translate-x-1/2 text-neutral-600 text-sm flex items-center gap-1">
+        <span className="fixed text-nowrap bottom-24 left-1/2 -translate-x-1/2 text-neutral-600 text-sm flex items-center gap-1">
           Made with
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ export default function Home() {
           by
           <a
             className="text-neutral-600 text-sm duration-300 hover:text-white hover:underline"
-            href="https://x.com/PickleNik"
+            href="https://x.com/PickleNik0864"
           >
             PickleNik
           </a>
