@@ -54,6 +54,10 @@ export default function Home() {
         <a target="_blank" href="https://github.com/Hacksore/vercel.lol">
           Sauce
         </a>
+        |
+        <a target="_blank" href="https://github.com/sponsors/PickleNik">
+          Buy a Triangle
+        </a>
       </span>
       <span className="fixed bottom-8 left-1/2 -translate-x-1/2 text-neutral-600 text-sm">
         © 2069 <span className="-mr-[3px]">▼</span>ercel.lol
