@@ -25,6 +25,9 @@ export function Canvas() {
   const blobRef = React.useRef<HTMLDivElement | null>(null);
   // subtitle
   const h3Ref = React.useRef<HTMLDivElement | null>(null);
+  // star bg
+  const starbgRef = React.useRef<HTMLDivElement | null>(null);
+  const starcountRef = React.useRef<HTMLDivElement | null>(null);
 
   // T4 title stack
   const t1Ref = React.useRef<HTMLDivElement | null>(null);
@@ -48,6 +51,10 @@ export function Canvas() {
 
     const h3 = document.getElementById("subtitle") as HTMLDivElement;
     h3Ref.current = h3;
+    const starbg = document.getElementById("star-bg") as HTMLDivElement;
+    const starcount = document.getElementById("star-count") as HTMLDivElement;
+    starbgRef.current = starbg;
+    starcountRef.current = starcount;
 
     const t1 = document.getElementById("t1") as HTMLDivElement;
     t1Ref.current = t1;
@@ -77,8 +84,9 @@ export function Canvas() {
     });
 
     window.addEventListener("mousemove", (e) => {
-      blob.style.translate = `${e.clientX - blob.clientWidth / 2}px ${e.clientY - blob.clientHeight / 2
-        }px`;
+      blob.style.translate = `${e.clientX - blob.clientWidth / 2}px ${
+        e.clientY - blob.clientHeight / 2
+      }px`;
     });
 
     viewportHeight = window.innerHeight;
@@ -138,6 +146,15 @@ export function Canvas() {
     if (h3) {
       h3.style.background = COLORS[currentColorId];
       h3.style.boxShadow = `0 0 3rem -0.25rem ${COLORS[currentColorId]}`;
+    }
+    const starbg = starbgRef.current;
+    if (starbg) {
+      starbg.style.background = COLORS[currentColorId];
+    }
+
+    const starcount = starcountRef.current;
+    if (starcount) {
+      starcount.style.background = COLORS[currentColorId];
     }
 
     const t1 = t1Ref.current as HTMLElement;
