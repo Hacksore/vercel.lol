@@ -50,15 +50,57 @@ export default function Home() {
         </div>
       </h1>
       <Canvas />
-      <span className="fixed left-1/2 -translate-x-1/2 bottom-16 text-neutral-600 text-sm duration-300 hover:text-white">
-        <a target="_blank" href="https://github.com/Hacksore/vercel.lol">
-          Sauce
-        </a>
-        |
-        <a target="_blank" href="https://github.com/sponsors/PickleNik">
-          Buy a Triangle
-        </a>
-      </span>
+      <div className="group">
+        <span className="fixed left-1/2 -translate-x-1/2 bottom-16 text-neutral-600 flex items-center gap-2">
+          <a
+            target="_blank"
+            className="text-neutral-600 text-sm duration-300 hover:text-white hover:underline"
+            href="https://github.com/Hacksore/vercel.lol"
+          >
+            Sauce
+          </a>
+          <div className="text-xs">|</div>
+          <a
+            target="_blank"
+            className="text-neutral-600 text-sm duration-300 hover:text-white hover:underline"
+            href="https://github.com/sponsors/PickleNik"
+          >
+            Buy a Triangle
+          </a>
+        </span>
+        <span className="fixed bottom-24 left-1/2 -translate-x-1/2 text-neutral-600 text-sm flex items-center gap-1">
+          Made with
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="h-3.5 w-3.5 group-hover:text-red-500 group-hover:scale-110 ease-[cubic-bezier(0.175,0.885,0.32,2.275)] duration-300 fill-current lucide lucide-heart"
+          >
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+          </svg>
+          by
+          <a
+            className="text-neutral-600 text-sm duration-300 hover:text-white hover:underline"
+            href="https://x.com/PickleNik"
+          >
+            PickleNik
+          </a>
+          and
+          <a
+            className="text-neutral-600 text-sm duration-300 hover:text-white hover:underline"
+            href="https://x.com/Hacksore"
+          >
+            Hacksore
+          </a>
+        </span>
+      </div>
+
       <span className="fixed bottom-8 left-1/2 -translate-x-1/2 text-neutral-600 text-sm">
         © 2069 <span className="-mr-[3px]">▼</span>ercel.lol
       </span>
