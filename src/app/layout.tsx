@@ -35,6 +35,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="vercel-toolbar-position" content="top center" />
+      </head>
       <body className={inter.className}>
         {children}
         <Analytics />
