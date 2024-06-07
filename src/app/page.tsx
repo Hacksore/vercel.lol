@@ -86,6 +86,7 @@ export default function Home() {
           </svg>
           by
           <a
+            target="_blank"
             className="text-neutral-600 text-sm duration-300 hover:text-white hover:underline"
             href="https://x.com/PickleNik0864"
           >
@@ -93,6 +94,7 @@ export default function Home() {
           </a>
           and
           <a
+            target="_blank"
             className="text-neutral-600 text-sm duration-300 hover:text-white hover:underline"
             href="https://x.com/Hacksore"
           >
