@@ -40,7 +40,7 @@ export default async function TheHub() {
           <Loader className="lucide-loader h-4 w-4 animate-spin my-1" />
         )}
       </div>
-      <span className="duration-300 grayscale group-hover:grayscale-0 text-black dark:text-white">
+      <span className="duration-300 whitespace-nowrap grayscale group-hover:grayscale-0 text-black dark:text-white">
         Star us on the hub
       </span>
       <ChevronRight className="lucide-chevron-right w-4 h-4 duration-300 group-hover:translate-x-0.5" />
