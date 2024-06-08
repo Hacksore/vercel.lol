@@ -34,7 +34,7 @@ export default function Home() {
           </span>
         </div>
         {/* T4 Stack */}
-        <div id="t4wrap" className="relative tracking-widest">
+        <div id="t4wrap" className="relative tracking-wide">
           <span
             id="t4"
             className="duration-300 opacity-0 bg-clip-text text-transparent bg-gradient-to-r from-[#FFCC00] to-[#FF2222]"
