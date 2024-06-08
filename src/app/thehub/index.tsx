@@ -1,18 +1,23 @@
 import { ChevronRight, Loader, Star } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export const revalidate = 3600;
 
-export default async function TheHub() {
-  let starCount: number | undefined;
+export default function TheHub() {
   let formatter = Intl.NumberFormat("en", { notation: "compact" });
-  await fetch("https://api.github.com/repos/hacksore/vercel.lol")
-    .then((response) => response.json())
-    .then((data) => {
-      starCount = data.stargazers_count;
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+
+  const [starCount, setStarCount] = useState(0);
+
+  useEffect(() => {
+    fetch("https://api.github.com/repos/hacksore/vercel.lol")
+      .then((response) => response.json())
+      .then((data) => {
+        setStarCount(data.stargazers_count);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
 
   return (
     <a
@@ -27,18 +32,13 @@ export default async function TheHub() {
       ></div>
       <div
         id="star-count"
-        className={`flex gap-1 items-center ${
-          starCount ? "px-2" : "px-1.5"
-        } py-0.5 mr-0.5 duration-300 bg-black text-black rounded-full font-bold`}
+        className={`flex gap-1 items-center ${starCount ? "px-2" : "px-1.5"
+          } py-0.5 mr-0.5 duration-300 bg-black text-black rounded-full font-bold`}
       >
-        {starCount ? (
-          <>
-            <Star className="lucide-star w-3 h-3 fill-current" />
-            {formatter.format(starCount)}
-          </>
-        ) : (
-          <Loader className="lucide-loader h-4 w-4 animate-spin my-1" />
-        )}
+        <>
+          <Star className="lucide-star w-3 h-3 fill-current" />
+          {formatter.format(starCount)}
+        </>
       </div>
       <span className="duration-300 whitespace-nowrap grayscale group-hover:grayscale-0 text-black dark:text-white">
         Star us on the hub

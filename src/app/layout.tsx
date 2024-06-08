@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="vercel-toolbar-position" content="top center" />
+        <meta name="vercel-toolbar-position" content="bottom right" />
       </head>
       <body className={GeistSans.className}>
         {children}
