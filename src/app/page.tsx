@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <div>
       <a href="https://discord.gg/2c2uBmMnbt" className="group w-full z-50 fixed h-10 flex font-bold items-center justify-center">
-        <span className="pr-2">🚀</span>
-        <span className="group-hover:underline">vercel.lol has just announced 69 million in series deez VC funding</span>
-        <span className="pl-2">🚀</span>
+        <div className="pr-2 ml-auto">🚀</div>
+        <div className="group-hover:underline text-balance sm:w-auto w-[24ch] text-center sm:text-base text-sm">vercel.lol just announced 69 million in series deez VC funding</div>
+        <div className="pl-2 mr-auto">🚀</div>
       </a>
       <TheHub />
       <h1 className="fixed opacity-90 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-6xl md:text-8xl text-center">
