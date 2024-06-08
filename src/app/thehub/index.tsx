@@ -1,4 +1,4 @@
-import { ChevronRight, Loader, Star } from "lucide-react";
+import { ChevronRight, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export const revalidate = 3600;
