@@ -1,11 +1,8 @@
 import { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
-
-// If loading a variable font, you don't need to specify the font weight
-const inter = Inter({ subsets: [] });
 
 export async function generateMetadata(): Promise<Metadata> {
   const description = "▲ The triangle company";
@@ -38,7 +35,7 @@ export default function RootLayout({
       <head>
         <meta name="vercel-toolbar-position" content="top center" />
       </head>
-      <body className={inter.className}>
+      <body className={GeistSans.className}>
         {children}
         <Analytics />
       </body>

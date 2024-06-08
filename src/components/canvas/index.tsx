@@ -39,7 +39,7 @@ export function Canvas() {
   const ctxRef = React.useRef<CanvasRenderingContext2D | null>(null);
 
   const TRIANGLE_HEIGHT = 64;
-  const TRIANGLE_WIDTH = 64;
+  const TRIANGLE_WIDTH = 72;
   const SQUARE_SIZE = 64;
 
   useEffect(() => {
