@@ -24,7 +24,7 @@ export default function TheHub() {
       target="_blank"
       rel="noreferrer noopener"
       href="https://github.com/hacksore/vercel.lol"
-      className="group fixed gap-2 w-fit items-center flex top-24 left-1/2 -translate-x-1/2 group border hover:no-underline dark:border-white/10 border-black/10 backdrop-saturate-200 backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-full p-2 pr-3 pl-2 mx-auto dark:text-white duration-300 dark:hover:border-neutral-500/30 hover:border-black/20 overflow-hidden text-xs sm:text-sm xl:text-base"
+      className="group fixed gap-2 w-fit items-center flex top-20 left-1/2 -translate-x-1/2 group border hover:no-underline dark:border-white/10 border-black/10 backdrop-saturate-200 backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-full p-2 pr-3 pl-2 mx-auto dark:text-white duration-300 dark:hover:border-neutral-500/30 hover:border-black/20 overflow-hidden text-xs sm:text-sm xl:text-base"
     >
       <div
         id="star-bg"

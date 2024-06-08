@@ -12,7 +12,7 @@ export default function Main() {
     <div>
       <a
         href="https://discord.gg/2c2uBmMnbt"
-        className="group w-full z-50 fixed h-10 flex font-bold items-center justify-center"
+        className="group w-full z-50 pt-8 fixed h-10 flex font-bold items-center justify-center"
       >
         <div className="pr-2 ml-auto">🚀</div>
         <div className="group-hover:underline text-balance sm:w-auto w-[24ch] text-center sm:text-base text-sm">
