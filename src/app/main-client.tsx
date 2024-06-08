@@ -127,7 +127,7 @@ export default function Main() {
       </div>
       {!vercelToolbar && (
         <button
-          className="absolute hidden sm:block bottom-4 bg-black/20 backdrop-blur-sm right-4 text-neutral-600 hover:text-white duration-300 border border-neutral-600 hover:border-white px-4 py-2 rounded-full hover:scale-105 active:duration-75 active:scale-95"
+          className="absolute hidden sm:block bottom-8 bg-black/20 backdrop-blur-sm right-8 text-neutral-600 hover:text-white duration-300 border border-neutral-600 hover:border-white px-4 py-2 rounded-full hover:scale-105 active:duration-75 active:scale-95"
           onClick={() => {
             setVercelToolbar(true);
           }}
@@ -135,7 +135,6 @@ export default function Main() {
           leaked nextjs v17
         </button>
       )}
-      )
     </div>
   );
 }
