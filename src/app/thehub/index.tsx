@@ -9,10 +9,10 @@ export default function TheHub() {
   const [starCount, setStarCount] = useState(0);
 
   useEffect(() => {
-    fetch("https://api.github.com/repos/hacksore/vercel.lol")
+    fetch("/api/stars")
       .then((response) => response.json())
-      .then((data) => {
-        setStarCount(data.stargazers_count);
+      .then((res) => {
+        setStarCount(res.stars);
       })
       .catch((error) => {
         console.error("Error:", error);
