@@ -13,7 +13,7 @@ export default function Main() {
         className="group w-full z-50 pt-8 fixed h-10 flex font-bold items-center justify-center"
       >
         <div className="pr-2 ml-auto">🚀</div>
-        <div className="group-hover:underline text-balance sm:w-auto w-[24ch] text-center sm:text-base text-sm">
+        <div className="group-hover:underline text-white text-balance sm:w-auto w-[24ch] text-center sm:text-base text-sm">
           vercel.lol just announced $420 million in series deez VC funding
         </div>
         <div className="pl-2 mr-auto">🚀</div>
