@@ -2,12 +2,10 @@
 
 import { Canvas } from "../components/canvas";
 import { VercelToolbar } from "@vercel/toolbar/next";
-import { Suspense, useState } from "react";
 import { FlagValues } from "@vercel/flags/react";
 import TheHub from "./thehub";
 
 export default function Main() {
-  const [vercelToolbar, setVercelToolbar] = useState(false);
   return (
     <div>
       <a
@@ -92,9 +90,7 @@ export default function Main() {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
             className="h-3.5 w-3.5 group-hover:text-red-500 group-hover:scale-110 ease-[cubic-bezier(0.175,0.885,0.32,2.275)] duration-300 fill-current lucide lucide-heart"
           >
             <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
@@ -117,7 +113,7 @@ export default function Main() {
           </a>
         </span>
       </div>
-      <Suspense>{vercelToolbar && <VercelToolbar />}</Suspense>
+      <VercelToolbar />
       <span className="fixed bottom-8 left-1/2 -translate-x-1/2 text-neutral-600 text-sm">
         © 2069 <span className="-mr-[3px]">▼</span>ercel.lol
       </span>
@@ -125,16 +121,6 @@ export default function Main() {
         {/* Some other content */}
         <FlagValues values={{ exampleFlag: true }} />
       </div>
-      {!vercelToolbar && (
-        <button
-          className="absolute hidden sm:block bottom-8 bg-black/20 backdrop-blur-sm right-8 text-neutral-600 hover:text-white duration-300 border border-neutral-600 hover:border-white px-4 py-2 rounded-full hover:scale-105 active:duration-75 active:scale-95"
-          onClick={() => {
-            setVercelToolbar(true);
-          }}
-        >
-          leaked nextjs v17
-        </button>
-      )}
     </div>
   );
 }
