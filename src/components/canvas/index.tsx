@@ -200,7 +200,7 @@ export function Canvas() {
     <>
       <div
         id="cursorthing"
-        className="pointer-events-none w-64 h-64 fixed opacity-50 blur-[10rem] z-10 rounded-full"
+        className="transform-gpu pointer-events-none w-64 h-64 fixed opacity-50 blur-[10rem] z-10 rounded-full"
       />
       <canvas
         id="canvas"
